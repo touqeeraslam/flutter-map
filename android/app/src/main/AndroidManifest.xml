@@ -37,6 +37,6 @@
         </activity>
         <!-- Adding the google maps api key for android sdk-->
         <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="AIzaSyBvI3Snb-y5qKYG34T-8GB0-FiCFD3l6g4"/>
+               android:value="Your API key"/>
     </application>
 </manifest>
