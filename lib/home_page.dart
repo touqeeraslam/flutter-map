@@ -18,7 +18,8 @@ final Map<String, Marker> _markers = {};
 Completer<GoogleMapController> _controller = Completer();
 
   static final CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962)
+    target: LatLng(37.42796133580664, -122.085749655962),
+    zoom: 14.4746,
   );
 
   @override
@@ -78,9 +79,9 @@ Completer<GoogleMapController> _controller = Completer();
   Response response = await get(url);
   // sample info available in response
   int statusCode = response.statusCode;
-    // to convert json to object...  
+    // to convert json to object...    
   final locationInfo = jsonDecode(response.body);
-    if (statusCode == 200) {
+  if (statusCode == 200) {
     setState(() {
       _markers.clear();
       final marker = Marker(
@@ -91,7 +92,7 @@ Completer<GoogleMapController> _controller = Completer();
       _markers["Current Location"] = marker;
     });  } 
     else {
-      print('getting error from Api');
+      print('getting error from API');
   }
 
 }
